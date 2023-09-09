@@ -1,0 +1,15 @@
+### TRAER FORO COMPLETO
+GET http://localhost:3000/api/foro
+
+### CREAR NUEVA ENTRADA EN EL FORO
+POST http://localhost:3000/api/foro
+Content-Type: application/json
+
+{
+    "title": "nuevo titulo",
+    "content": "nuevo contenido",
+    "image": "www.url.com"
+}
+
+### ELIMINA ENTRADA DEL FORO
+DELETE http://localhost:3000/api:id

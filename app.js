@@ -4,6 +4,8 @@ import { startDb } from './src/config/database.js';
 
 const app = express();
 
+app.use(express.json())
+
 const port = 3000;
 
 app.use('/', foroRouter);
