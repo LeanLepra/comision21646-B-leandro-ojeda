@@ -1,10 +1,23 @@
 import { ForoModel} from "../models/Foro.js";
 
+
+export const ctrlView = async (req, res) => {
+    try {
+        const viewForo = await ForoModel.findAll();
+        res.render('foro.ejs', {viewForo});
+    } catch (error) {
+        console.error(error)
+        return res.status(500).json({
+            message : 'Error Server'
+        })        
+    }
+}
+
 export const ctrlGetForo = async (req, res) => {
     try {
-        const foro = await ForoModel.findAll();
-        if (!foro) return res.status(404)
-        return res.status(200).json(foro)
+        const getForo = await ForoModel.findAll();
+        if (!getForo) return res.status(404)
+        return res.status(200).json(getForo)
 
     } catch (error) {
         console.error(error)
@@ -29,14 +42,14 @@ export const ctrlCreateForo = async (req, res) => {
 export const ctrlUpdateForo = async (req, res) => {
     const { id } = req.params
     try {
-        const foro = await ForoModel.findByPk(id)
-        if (!foro){
+        const upForo = await ForoModel.findByPk(id)
+        if (!upForo){
             return res.status(404).json({
                 message: 'Post no encontrado'
             })
         }
-        foro.update(req.body)
-        return res.status(200).json(foro)
+        upForo.update(req.body)
+        return res.status(200).json(upForo)
     } catch (error) {
         console.error(error)
         return res.status(500).json({

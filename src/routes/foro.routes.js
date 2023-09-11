@@ -1,10 +1,12 @@
 import { Router } from "express";
-import { ctrlCreateForo, ctrlDeleteForo, ctrlGetForo, ctrlUpdateForo } from "../controllers/foro.controllers.js";
+import { ctrlCreateForo, ctrlDeleteForo, ctrlGetForo, ctrlUpdateForo, ctrlView } from "../controllers/foro.controllers.js";
 import { createForoSchema, editForoSchema } from "../models/schemas/foro.schema.js";
 import { validator } from "../middlewares/validator.js"
 import { ForoModel } from "../models/Foro.js";
 
 const foroRouter = Router();
+
+foroRouter.get('/foro', ctrlView)
 
 foroRouter.get('/api/foro', ctrlGetForo);
 
