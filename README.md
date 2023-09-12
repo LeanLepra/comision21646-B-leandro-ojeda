@@ -4,5 +4,6 @@
 
 # FORO PERSONALIZADO PARA PUBLICAR CONTENIDO MULTITEMATICO
 
-**SEPTIEMBRE 2023**
+<li>Nombre de la base de datos db_foro</li>
+
 </div>
